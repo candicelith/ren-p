@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink: #0c0a0d;
+  --color-ink-soft: #17141a;
+  --color-ink-line: #2a2530;
+  --color-bone: #faf7f8;
+  --color-bone-soft: #f1e9ec;
+  --color-bone-line: #e3d5da;
+  --color-blush: #e9cbd6;
+  --color-rose: #c98aa0;
+  --color-rose-deep: #8f5468;
+
+  --font-display: var(--font-serif);
+  --font-body: var(--font-sans-ui);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-bone text-ink dark:bg-ink dark:text-bone-soft transition-colors duration-300;
+    font-feature-settings: "ss01";
+  }
+
+  ::selection {
+    @apply bg-blush text-ink;
+  }
+
+  * {
+    @apply border-bone-line dark:border-ink-line;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
