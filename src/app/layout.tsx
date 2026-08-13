@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
@@ -19,6 +19,19 @@ const body = Manrope({
 export const metadata: Metadata = {
   title: "Irene — Portfolio",
   description: "Web development, graphic design, and 3D art.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -28,14 +41,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <head>
-        {/* Favicon (SVG preferred) */}
-        <link rel="icon" href="/favicon.svg" />
-        {/* Fallback for older browsers */}
-        <link rel="alternate icon" href="/favicon.ico" />
-        {/* Theme color for supported browsers */}
-        <meta name="theme-color" content="#0f172a" />
-      </head>
       <body className={`${display.variable} ${body.variable} font-body`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
