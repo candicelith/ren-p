@@ -177,7 +177,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/candicelith"
                   className="hover:text-rose-deep dark:hover:text-blush focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-deep focus-visible:ring-offset-2 focus-visible:ring-offset-bone dark:focus-visible:ring-offset-ink rounded transition-colors"
                 >
                   GitHub

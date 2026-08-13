@@ -28,6 +28,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" suppressHydrationWarning>
+      <head>
+        {/* Favicon (SVG preferred) */}
+        <link rel="icon" href="/favicon.svg" />
+        {/* Fallback for older browsers */}
+        <link rel="alternate icon" href="/favicon.ico" />
+        {/* Theme color for supported browsers */}
+        <meta name="theme-color" content="#0f172a" />
+      </head>
       <body className={`${display.variable} ${body.variable} font-body`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
