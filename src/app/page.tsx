@@ -121,7 +121,7 @@ export default function Home() {
             </a>
 
             <a
-              href="/cv.pdf"
+              href="/irene_cv.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-ink/30 dark:border-blush/30 text-sm font-medium text-ink/80 dark:text-bone-soft/80 hover:border-rose-deep hover:text-rose-deep dark:hover:border-blush dark:hover:text-blush focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-deep focus-visible:ring-offset-2 focus-visible:ring-offset-bone dark:focus-visible:ring-offset-ink transition-colors"
             >
